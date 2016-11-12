@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context="com.sysom.rightlauncher.MainActivity">
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentStart="true"
+        android:max="100"
+        android:progress="0"
+        android:id="@+id/progressBar"/>
+
+    <Button
+        android:text="暂停"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="36dp"
+        android:id="@+id/btn_stop"
+        android:layout_below="@+id/progressBar"
+        android:layout_alignEnd="@+id/progressBar"/>
+
+    <Button
+        android:text="开始"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_start"
+        android:layout_alignBaseline="@+id/btn_stop"
+        android:layout_alignBottom="@+id/btn_stop"
+        android:layout_alignStart="@+id/progressBar"
+        android:layout_marginStart="30dp"/>
+</RelativeLayout>
