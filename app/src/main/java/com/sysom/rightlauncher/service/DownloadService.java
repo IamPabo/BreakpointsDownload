@@ -77,7 +77,7 @@ public class DownloadService extends Service{
     class mThread extends Thread{
         private FileInfo info;
         //初始化
-        public mThread(FileInfo info){
+        mThread(FileInfo info){
             this.info = info;
         }
 
@@ -95,7 +95,7 @@ public class DownloadService extends Service{
                 conn.setConnectTimeout(3000);
                 //设置请求方式为 get
                 conn.setRequestMethod("GET");
-                int length = -1;
+                int length;
                 //网络链接响应OK
                 //添加依赖包（HttpStatus.SC_OK） compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
                 if(conn.getResponseCode() != HttpURLConnection.HTTP_OK){
@@ -109,10 +109,8 @@ public class DownloadService extends Service{
                 //创建本地文件
                 File mFile = new File(DOWNLOAD_FILE_PATH);
                 //判断目录是否存在
-                if(!mFile.exists()){
-                    //不存在创建目录
-                    mFile.mkdir();
-                }
+                //不存在创建目录
+                if(!mFile.exists()) mFile.mkdir();
                 //目录下创建文件（目录文件，文件名）
                 File file = new File(mFile,info.getFileName());
                 //设置文件 r read(读) w write(写) d delete（删除）

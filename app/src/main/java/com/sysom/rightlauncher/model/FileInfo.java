@@ -11,7 +11,7 @@ public class FileInfo implements Serializable{
     private int fileLenght;
     private String fileName;
     private String fileUrl;
-    private boolean isFinish;
+    private int isFinished;
 
     public FileInfo(int fileId,int fileLenght,String fileName,String fileUrl){
         this.fileId = fileId;
@@ -52,12 +52,12 @@ public class FileInfo implements Serializable{
         this.fileUrl = fileUrl;
     }
 
-    public boolean isFinish() {
-        return isFinish;
+    public int isFinish() {
+        return isFinished;
     }
 
-    public void setFinish(boolean finish) {
-        isFinish = finish;
+    public void setFinish(int finish) {
+        isFinished = finish;
     }
 
     @Override
@@ -67,7 +67,7 @@ public class FileInfo implements Serializable{
                 ", fileLenght=" + fileLenght +
                 ", fileName='" + fileName + '\'' +
                 ", fileUrl='" + fileUrl + '\'' +
-                ", isFinish=" + isFinish +
+                ", isFinish=" + isFinished +
                 '}';
     }
 }

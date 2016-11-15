@@ -11,12 +11,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBHelper extends SQLiteOpenHelper {
     private static final int VERSION = 1;
     private static final String DB_NAME = "download.db";
-    private static final String DB_CREATE = "create table thread_info(_id integer primary key autoincrement" +
+    private static final String DB_CREATE = "create table thread_info(_id integer primary key autoincrement," +
             "thread_id integer,url text,start integer,end integer,finished integer)";
     private static final String DB_DROP = "drop table if exists thread_info";
 
     public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+            super(context, name, factory, version);
     }
 
     public DBHelper(Context context){
